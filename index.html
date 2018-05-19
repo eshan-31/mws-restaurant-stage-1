@@ -2,50 +2,50 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <!-- For responsiveness across devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="img/rest_ic.ico">
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <link rel="stylesheet" href="css/styles.css">
-  <title tabindex="-1">Restaurant Reviews</title>
+    <meta charset="utf-8">
+    <!-- For responsiveness across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/rest_ic.ico">
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title tabindex="-1">Restaurant Reviews</title>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <h1><a tabindex="1" href="/">Restaurant Reviews</a></h1>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <h1><a tabindex="1" href="/">Restaurant Reviews</a></h1>
+        </nav>
+    </header>
 
-  <main id="maincontent">
-    <section id="map-container">
-      <div aria-label="map" role="presentation" id="map"></div>
-    </section>
-    <section>
-      <div aria-label="Filter Restaurant options" role="region" class="filter-options">
-        <h2>Filter Results</h2>
-        <select tabindex="2" id="neighborhoods-select" name="neighborhoods" aria-label="Select Neighborhood" role="list" onchange="updateRestaurants()">
+    <main id="maincontent">
+        <section id="map-container">
+            <div aria-label="map" role="presentation" id="map"></div>
+        </section>
+        <section>
+            <div aria-label="Filter Restaurant options" role="region" class="filter-options">
+                <h2>Filter Results</h2>
+                <select tabindex="2" id="neighborhoods-select" name="neighborhoods" aria-label="Select Neighborhood" role="list" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select tabindex="4" id="cuisines-select" name="cuisines" aria-label="Select Cuisine" role="list" onchange="updateRestaurants()">
+                <select tabindex="4" id="cuisines-select" name="cuisines" aria-label="Select Cuisine" role="list" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
-      </div>
-      <ul aria-label="list of restaurants" id="restaurants-list"></ul>
-    </section>
-  </main>
+            </div>
+            <ul aria-label="list of restaurants" id="restaurants-list"></ul>
+        </section>
+    </main>
 
-  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-  <!-- For Service worker registration -->
-  <script type="application/javascript" charset="utf-8" src="service_worker_reg.js"></script>
-  <!-- API key of map generated and used -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2kpSAbcvy_BTKHGBJ7gmGj9NIcQTdVhE&libraries=places&callback=initMap"></script> 
+    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+    <!-- For Service worker registration -->
+    <script type="application/javascript" charset="utf-8" src="service_worker_reg.js"></script>
+    <!-- API key of map generated and used -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2kpSAbcvy_BTKHGBJ7gmGj9NIcQTdVhE&libraries=places&callback=initMap"></script>
 
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-  </footer>
+    <footer id="footer">
+        Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </footer>
 
 </body>
 
