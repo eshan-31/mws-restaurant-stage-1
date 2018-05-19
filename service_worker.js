@@ -2,6 +2,7 @@ self.addEventListener('install', function (event) {
   // Perform install steps
 }); var CACHE_NAME = 'resto-cache';
 
+//elements to be cached
 var toCache = [
   '/',
   './index.html',
@@ -23,8 +24,10 @@ var toCache = [
   './img/10.jpg',
 ];
 
+//service worker code referenced from stack overflow
+
 self.addEventListener('install', function (event) {
-  // Perform install steps
+  // install service worker
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function (cache) {
@@ -33,11 +36,12 @@ self.addEventListener('install', function (event) {
       })
   );
 });
-
+//activate service worker
 self.addEventListener('activate',  event => {
   event.waitUntil(self.clients.claim());
 });
 
+//fetch files from the cache
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request, {ignoreSearch:true}).then(response => {

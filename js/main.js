@@ -1,10 +1,10 @@
 let restaurants,
   neighborhoods,
   cuisines,
-  index
+  index // for handling tab index
 var map
 var markers = []
-index=4;
+index=4; // 3 indices already assigned
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -142,7 +142,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.setAttribute("alt", restaurant.alt);
+  image.setAttribute("alt", restaurant.alt); // setting alt attribute
   li.append(image);
 
   const name = document.createElement('h1');
@@ -160,8 +160,8 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  more.setAttribute("tabindex",index);
-  more.setAttribute("aria-label","View Details of"+restaurant.name);
+  more.setAttribute("tabindex",index); //setting tab index
+  more.setAttribute("aria-label","View Details of"+restaurant.name); //setting aria label 
   index++;
   li.append(more)
 

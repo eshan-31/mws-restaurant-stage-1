@@ -1,6 +1,6 @@
 let restaurant;
 var map;
-var index=7;
+var index=7; // to handle tab index
 /**
  * Initialize Google map, called from HTML.
  */
@@ -59,7 +59,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.setAttribute("alt",restaurant.alt)
+  image.setAttribute("alt",restaurant.alt); //setting alt attribute
   image.setAttribute("tabindex",3);
 
   const cuisine = document.getElementById('restaurant-cuisine');
